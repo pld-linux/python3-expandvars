@@ -5,7 +5,7 @@
 Summary:	Expand system variables Unix style
 Name:		python3-%{module}
 Version:	0.12.0
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://pypi.debian.net/%{module}/%{module}-%{version}.tar.gz
