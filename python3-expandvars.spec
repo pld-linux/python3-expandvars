@@ -6,13 +6,13 @@
 Summary:	Expand system variables Unix style
 Summary(pl.UTF-8):	Rozwijanie zmiennych systemowych w stylu Uniksa
 Name:		python3-%{module}
-Version:	0.12.0
-Release:	3
+Version:	1.0.0
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/expandvars/
-Source0:	https://pypi.debian.net/expandvars/%{module}-%{version}.tar.gz
-# Source0-md5:	8091f578a547e2b4b9df59100a179266
+Source0:	https://files.pythonhosted.org/packages/source/e/expandvars/%{module}-%{version}.tar.gz
+# Source0-md5:	8f36c472b29b8c83a1585dd53b4ed0d1
 URL:		https://pypi.org/project/expandvars/
 BuildRequires:	python3-build
 BuildRequires:	python3-hatchling
