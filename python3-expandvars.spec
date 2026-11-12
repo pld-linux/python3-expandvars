@@ -6,24 +6,24 @@
 Summary:	Expand system variables Unix style
 Summary(pl.UTF-8):	Rozwijanie zmiennych systemowych w stylu Uniksa
 Name:		python3-%{module}
-Version:	1.0.0
+Version:	1.1.2
 Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/expandvars/
 Source0:	https://files.pythonhosted.org/packages/source/e/expandvars/%{module}-%{version}.tar.gz
-# Source0-md5:	8f36c472b29b8c83a1585dd53b4ed0d1
+# Source0-md5:	6afc7c8f9c35241333408f34e598f458
 URL:		https://pypi.org/project/expandvars/
 BuildRequires:	python3-build
 BuildRequires:	python3-hatchling
 BuildRequires:	python3-installer
-BuildRequires:	python3-modules >= 1:3.2
+BuildRequires:	python3-modules >= 1:3.6.2
 %if %{with tests}
 BuildRequires:	python3-pytest
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 2.044
-Requires:	python3-modules >= 1:3.2
+Requires:	python3-modules >= 1:3.6.2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,8 +42,9 @@ basha. Może być alternatywą dla funkcji Pythona os.path.expandvars.
 %py3_build_pyproject
 
 %if %{with tests}
+# addopts in pyproject.toml is a string (pytest 9 wants a list) and only adds coverage
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
-%{__python3} -m pytest tests
+%{__python3} -m pytest -o addopts= tests
 %endif
 
 %install
